@@ -1,34 +1,68 @@
-# Gold price forecasting
+# 📈 Gold Price Forecasting
 
-This project investigates the use of machine learning models to forecast gold prices based on historical data.
+![Gold Price Forecasting](https://img.shields.io/badge/Status-Active-success)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-**Objective:**
+This project utilizes advanced machine learning and deep learning techniques to forecast the daily closing price of gold. By analyzing historical data, the project implements and compares various time-series forecasting models to identify the most accurate predictor.
 
-* Develop accurate models to predict the closing price of gold for the following day.
+## 📋 Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Dataset](#dataset)
+- [Project Structure](#project-structure)
+- [Models Implemented](#models-implemented)
+- [Results & Evaluation](#results--evaluation)
 
-**Approach:**
+## 🧐 Overview
+The primary objective of this project is to predict the "Closing Price" of gold for the next trading day. The project explores a variety of statistical and neural network-based approaches to handle the volatility and non-linearity of financial time-series data.
 
-1. **Data Collection and Preprocessing:**
-   * Gathered historical gold price data from [[source of data]](https://finance.yahoo.com/quote/GC=F/).
-   * Cleaned and preprocessed the data to address missing values, outliers, and ensure consistency.
-   * Explored the data to understand patterns and trends using techniques like visualization and statistical analysis.
+## 🚀 Features
+- **Data Acquisition**: Automated fetching of historical data from Yahoo Finance.
+- **Preprocessing**: Cleaning, missing value handling, and normalization.
+- **Exploratory Data Analysis (EDA)**: Visualization of trends, seasonality, and volatility.
+- **Model Comparison**: Implementation of 6 different forecasting algorithms.
+- **Evaluation**: Rigorous testing using RMSE, MSE, and MAE metrics.
 
-2. **Model Development and Evaluation:**
-   * Implemented and evaluated various machine learning models commonly used for time series forecasting, including:
-     * Bayesian Neural Networks (BNNs)
-     * Hidden Markov Models (HMMs)
-     * Convolutional Neural Networks (CNNs) combined with Long Short-Term Memory (LSTM) networks (CNN-LSTMs)
-     * Autoregressive Integrated Moving Average (ARIMA) models (if applicable)
-     * Gated Recurrent Units (GRUs)
-     * LSTMs
-   * Used a rolling window of 60 days to train models on historical data and predict the closing price for the next day.
-   * Performed hyperparameter tuning to optimize model performance.
-   * Evaluated model accuracy using metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE).
-   * Compared the performance of different models to select the best performing one.
+## 📊 Dataset
+The data is sourced from **Yahoo Finance** (Symbol: `GC=F`).
+- **Source**: [Yahoo Finance Gold Futures](https://finance.yahoo.com/quote/GC=F/)
+- **Interval**: Daily
+- **Features Used**: Open, High, Low, Close, Volume.
+- **Preprocessing**: A rolling window of **60 days** is used to create feature sequences for training the models.
 
-**Technologies:**
+## 📂 Project Structure
+```bash
+Python-Gold-Price-Forecasting/
+├── data/                 # Raw and processed datasets
+├── source_code/          # Jupyter notebooks and Python scripts
+│   ├── ARIMA.ipynb
+│   ├── LSTM.ipynb
+│   ├── CNN_LSTM.ipynb
+│   └── ... (other model scripts)
+├── Paper.docx            # Research paper detailing the study
+├── Report.docx           # Project report
+└── README.md             # Project documentation
+```
 
-* Programming Language: Python
-* Data Analysis Libraries: Pandas, NumPy
-* Machine Learning Libraries: Scikit-learn (if applicable for models like ARIMA), Keras (for deep learning models like CNN-LSTM)
-* Data Visualization: Matplotlib
+## 🧠 Models Implemented
+The project evaluates the following models:
+
+* **ARIMA (Autoregressive Integrated Moving Average):** For capturing linear trends in time series.
+* **HMM (Hidden Markov Models):** To model hidden states in the market regime.
+* **BNN (Bayesian Neural Networks):** Probabilistic modeling to capture uncertainty.
+* **LSTM (Long Short-Term Memory):** Best for capturing long-term dependencies in sequence data.
+* **GRU (Gated Recurrent Units):** A streamlined variation of LSTM.
+* **CNN-LSTM:** A hybrid model using CNN to extract features and LSTM for sequence prediction.
+
+## 📈 Results & Evaluation
+Models are evaluated using the following metrics:
+
+* **MSE** (Mean Squared Error)
+* **RMSE** (Root Mean Squared Error)
+* **MAE** (Mean Absolute Error)
+
+> **Note:** Please refer to the `Report.docx` or the specific notebook outputs for the comparative analysis and to see which model yielded the best performance.
+
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
